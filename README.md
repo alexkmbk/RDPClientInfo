@@ -7,7 +7,7 @@ Example:
 
 	If AttachAddIn("CommonTemplate.RDPClientInfoAddin", "Component", AddInType.Native) Then
 		RDPClientInfo = New("AddIn.Component.RDPClientInfo");			
-    		IP = RDPClientInfo.GetExternalIP();
+		IP = RDPClientInfo.GetExternalIP();
 	EndIf;	
 
    
