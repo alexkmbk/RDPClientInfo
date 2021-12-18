@@ -1,5 +1,5 @@
 # RDPClientInfo
-1C:Enterprise addin to get an external IP address of RDP client
+1C:Enterprise addin to get a public IP address of RDP client
 
 Example:   
 
