@@ -291,9 +291,9 @@ bool CAddInNative::CallAsFunc(const long lMethodNum,
 
 					if (m_iMemory->AllocMemory((void**)&pvarRetValue->pstrVal, (INET_ADDRSTRLEN + 1)))
 					{
-						pvarRetValue->wstrLen = INET_ADDRSTRLEN;
+						inet_ntop(AF_INET, &(sa4.sin_addr), pvarRetValue->pstrVal, INET_ADDRSTRLEN);
+						pvarRetValue->strLen = strlen(pvarRetValue->pstrVal);
 					}
-					inet_ntop(AF_INET, &(sa4.sin_addr), pvarRetValue->pstrVal, INET_ADDRSTRLEN);
 					FreeLibrary(hInstWinSta);
 					return true;
 
@@ -305,9 +305,10 @@ bool CAddInNative::CallAsFunc(const long lMethodNum,
 					cb = sizeof(SOCKADDR_IN6);
 					if (m_iMemory->AllocMemory((void**)&pvarRetValue->pstrVal, (INET6_ADDRSTRLEN + 1)))
 					{
-						pvarRetValue->wstrLen = INET6_ADDRSTRLEN;
+						inet_ntop(AF_INET, &(sa6.sin6_addr), pvarRetValue->pstrVal, INET6_ADDRSTRLEN);
+						pvarRetValue->strLen = strlen(pvarRetValue->pstrVal);
 					}
-					inet_ntop(AF_INET, &(sa6.sin6_addr), pvarRetValue->pstrVal, INET6_ADDRSTRLEN);
+					
 					FreeLibrary(hInstWinSta);
 					return true;
 
